@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,10 @@ namespace final_calc_final
             btnDivide.Click += operator_clicked;
 
             btnEquals.Click += checkVal;
+            btnClear.Click += clearVal;
+
+            //interest tab
+            btnCalculate.Click += btnCalculateInterest;
         }
         string firstVal = "";
         string secondVal = "";
@@ -75,27 +80,39 @@ namespace final_calc_final
                 outputBox.Text = "";
             }
         }
+        private void clearVal(object sender, EventArgs e)
+        {
+            firstVal = "";
+            secondVal = "";
+            opVal = "";
+            opClicked = false;
+            outputBox.Text = "0";
+        }
         //method that checks if the first value and the second value, then if they both exist run a method
         private void checkVal(object sender, EventArgs e) 
         {
-            if(firstVal !="" && opVal != "")
+            Button button = sender as Button;
+            if (button.Text == "=")
             {
+                this.BackColor = Color.Red;
 
+                secondVal = outputBox.Text;
             }
             if (firstVal != "" && secondVal != "" && opVal != "")
             {
                 double finalVal = calculate_val(firstVal, secondVal, opVal);
                 outputBox.Text = finalVal.ToString();
                 firstVal = outputBox.Text;
-                Button button = sender as Button;
                 if(button.Text == "=")
                 {
-                    this.BackColor = Color.Red;
 
                     opVal = "";
                 }
             }
         }
+        //todo: make a clear button
+        //fix the equal button 
+
         private double calculate_val(string firstVal, string secondVal, string opType)
         {
             double finalVal = 0;
@@ -118,6 +135,60 @@ namespace final_calc_final
 
             return finalVal;
         }
+
+        //interest calculator 
+    
+
         
+
+        private void btnCalculateInterest(object sender, EventArgs e)
+        {
+            //initing values 
+            string a;//furutre value of investment
+            double p = 0; //investment amount
+            double r = 0; //interest rate /yr
+            int t = 0; //time (yrs)
+            int n = 0; //number of times interest is compounded;
+
+            try
+            {
+                p = double.Parse(txtDollars.Text); //investment amount
+                r = double.Parse(txtInterest.Text); //interest rate /yr
+                t = int.Parse(txtYears.Text); //time (yrs)
+
+                string rdoRateChecked = grpFrequency.Controls.OfType<RadioButton>().FirstOrDefault(f => f.Checked).Name;
+                switch (rdoRateChecked)
+                {
+                    case "rdoMonthly":
+                        n = 12;
+                        break;
+                    case "rdoQuarterly":
+                        n = 4;
+                        break;
+                    case "rdoSemianually":
+                        n = 2;
+                        break;
+                    case "rdoAnually":
+                        n = 1;
+                        break;
+                }
+               /**/
+                            a = calculateFinalInterest(p, r, n, t).ToString("C", CultureInfo.CurrentCulture);
+
+                cmpdOutput.Text = a;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+    }
+        //A = P * (1+(r/n)^(nt)
+        private double calculateFinalInterest( double p, double r,int n, int t)
+        {
+            double f = Convert.ToDouble(n*t);
+            double a =  p * Math.Pow( 1 + ((r/100) / n), n*t);
+            return a;
+        }
     }
 }

@@ -51,7 +51,7 @@
             this.tabInterest = new System.Windows.Forms.TabPage();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.grpFrequency = new System.Windows.Forms.GroupBox();
-            this.Anually = new System.Windows.Forms.RadioButton();
+            this.rdoAnually = new System.Windows.Forms.RadioButton();
             this.rdoSemi = new System.Windows.Forms.RadioButton();
             this.rdoQuarterly = new System.Windows.Forms.RadioButton();
             this.rdoMonthly = new System.Windows.Forms.RadioButton();
@@ -315,6 +315,7 @@
             this.tabInterest.Controls.Add(this.lblRate);
             this.tabInterest.Controls.Add(this.lblYears);
             this.tabInterest.Controls.Add(this.lblAmount);
+            this.tabInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInterest.Location = new System.Drawing.Point(4, 22);
             this.tabInterest.Name = "tabInterest";
             this.tabInterest.Padding = new System.Windows.Forms.Padding(3);
@@ -325,43 +326,47 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(460, 276);
+            this.btnCalculate.BackColor = System.Drawing.Color.LightGray;
+            this.btnCalculate.Location = new System.Drawing.Point(98, 340);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculate.Size = new System.Drawing.Size(219, 47);
             this.btnCalculate.TabIndex = 8;
             this.btnCalculate.Text = "Calculate";
-            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.UseVisualStyleBackColor = false;
             // 
             // grpFrequency
             // 
-            this.grpFrequency.Controls.Add(this.Anually);
+            this.grpFrequency.Controls.Add(this.rdoAnually);
             this.grpFrequency.Controls.Add(this.rdoSemi);
             this.grpFrequency.Controls.Add(this.rdoQuarterly);
             this.grpFrequency.Controls.Add(this.rdoMonthly);
-            this.grpFrequency.Location = new System.Drawing.Point(349, 38);
+            this.grpFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpFrequency.Location = new System.Drawing.Point(311, 229);
             this.grpFrequency.Name = "grpFrequency";
-            this.grpFrequency.Size = new System.Drawing.Size(408, 133);
+            this.grpFrequency.Size = new System.Drawing.Size(452, 89);
             this.grpFrequency.TabIndex = 7;
             this.grpFrequency.TabStop = false;
-            this.grpFrequency.Text = "groupBox1";
+            this.grpFrequency.Text = "Compound Frequency";
             // 
-            // Anually
+            // rdoAnually
             // 
-            this.Anually.AutoSize = true;
-            this.Anually.Location = new System.Drawing.Point(328, 58);
-            this.Anually.Name = "Anually";
-            this.Anually.Size = new System.Drawing.Size(74, 17);
-            this.Anually.TabIndex = 3;
-            this.Anually.TabStop = true;
-            this.Anually.Text = "rdoAnually";
-            this.Anually.UseVisualStyleBackColor = true;
+            this.rdoAnually.AutoSize = true;
+            this.rdoAnually.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoAnually.Location = new System.Drawing.Point(362, 34);
+            this.rdoAnually.Name = "rdoAnually";
+            this.rdoAnually.Size = new System.Drawing.Size(78, 24);
+            this.rdoAnually.TabIndex = 3;
+            this.rdoAnually.TabStop = true;
+            this.rdoAnually.Text = "Anually";
+            this.rdoAnually.UseVisualStyleBackColor = true;
             // 
             // rdoSemi
             // 
             this.rdoSemi.AutoSize = true;
-            this.rdoSemi.Location = new System.Drawing.Point(219, 58);
+            this.rdoSemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoSemi.Location = new System.Drawing.Point(212, 34);
             this.rdoSemi.Name = "rdoSemi";
-            this.rdoSemi.Size = new System.Drawing.Size(87, 17);
+            this.rdoSemi.Size = new System.Drawing.Size(121, 24);
             this.rdoSemi.TabIndex = 2;
             this.rdoSemi.TabStop = true;
             this.rdoSemi.Text = "Semiannually";
@@ -370,9 +375,10 @@
             // rdoQuarterly
             // 
             this.rdoQuarterly.AutoSize = true;
-            this.rdoQuarterly.Location = new System.Drawing.Point(135, 58);
+            this.rdoQuarterly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoQuarterly.Location = new System.Drawing.Point(115, 34);
             this.rdoQuarterly.Name = "rdoQuarterly";
-            this.rdoQuarterly.Size = new System.Drawing.Size(67, 17);
+            this.rdoQuarterly.Size = new System.Drawing.Size(91, 24);
             this.rdoQuarterly.TabIndex = 1;
             this.rdoQuarterly.TabStop = true;
             this.rdoQuarterly.Text = "Quarterly";
@@ -381,9 +387,10 @@
             // rdoMonthly
             // 
             this.rdoMonthly.AutoSize = true;
-            this.rdoMonthly.Location = new System.Drawing.Point(21, 58);
+            this.rdoMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoMonthly.Location = new System.Drawing.Point(15, 34);
             this.rdoMonthly.Name = "rdoMonthly";
-            this.rdoMonthly.Size = new System.Drawing.Size(62, 17);
+            this.rdoMonthly.Size = new System.Drawing.Size(82, 24);
             this.rdoMonthly.TabIndex = 0;
             this.rdoMonthly.TabStop = true;
             this.rdoMonthly.Text = "Monthly";
@@ -391,56 +398,62 @@
             // 
             // txtInterest
             // 
-            this.txtInterest.Location = new System.Drawing.Point(201, 290);
+            this.txtInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInterest.Location = new System.Drawing.Point(506, 103);
             this.txtInterest.Name = "txtInterest";
-            this.txtInterest.Size = new System.Drawing.Size(100, 20);
+            this.txtInterest.Size = new System.Drawing.Size(245, 44);
             this.txtInterest.TabIndex = 6;
             // 
             // txtYears
             // 
-            this.txtYears.Location = new System.Drawing.Point(349, 177);
+            this.txtYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYears.Location = new System.Drawing.Point(506, 171);
             this.txtYears.Name = "txtYears";
-            this.txtYears.Size = new System.Drawing.Size(100, 20);
+            this.txtYears.Size = new System.Drawing.Size(245, 44);
             this.txtYears.TabIndex = 5;
             // 
             // cmpdOutput
             // 
-            this.cmpdOutput.Location = new System.Drawing.Point(610, 306);
+            this.cmpdOutput.Location = new System.Drawing.Point(370, 340);
             this.cmpdOutput.Name = "cmpdOutput";
-            this.cmpdOutput.Size = new System.Drawing.Size(100, 20);
+            this.cmpdOutput.Size = new System.Drawing.Size(258, 47);
             this.cmpdOutput.TabIndex = 4;
             // 
             // txtDollars
             // 
-            this.txtDollars.Location = new System.Drawing.Point(151, 184);
+            this.txtDollars.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDollars.Location = new System.Drawing.Point(506, 38);
             this.txtDollars.Name = "txtDollars";
-            this.txtDollars.Size = new System.Drawing.Size(100, 20);
+            this.txtDollars.Size = new System.Drawing.Size(245, 44);
             this.txtDollars.TabIndex = 3;
             // 
             // lblRate
             // 
             this.lblRate.AutoSize = true;
-            this.lblRate.Location = new System.Drawing.Point(221, 313);
+            this.lblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRate.Location = new System.Drawing.Point(206, 103);
             this.lblRate.Name = "lblRate";
-            this.lblRate.Size = new System.Drawing.Size(80, 13);
+            this.lblRate.Size = new System.Drawing.Size(233, 37);
             this.lblRate.TabIndex = 2;
             this.lblRate.Text = "Rate of Interest";
             // 
             // lblYears
             // 
             this.lblYears.AutoSize = true;
-            this.lblYears.Location = new System.Drawing.Point(346, 200);
+            this.lblYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYears.Location = new System.Drawing.Point(180, 171);
             this.lblYears.Name = "lblYears";
-            this.lblYears.Size = new System.Drawing.Size(86, 13);
+            this.lblYears.Size = new System.Drawing.Size(261, 37);
             this.lblYears.TabIndex = 1;
             this.lblYears.Text = "Number of Years";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(148, 207);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(132, 38);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(100, 13);
+            this.lblAmount.Size = new System.Drawing.Size(305, 37);
             this.lblAmount.TabIndex = 0;
             this.lblAmount.Text = "Initial Dollar Amount";
             // 
@@ -492,7 +505,7 @@
         private System.Windows.Forms.TabPage tabInterest;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.GroupBox grpFrequency;
-        private System.Windows.Forms.RadioButton Anually;
+        private System.Windows.Forms.RadioButton rdoAnually;
         private System.Windows.Forms.RadioButton rdoSemi;
         private System.Windows.Forms.RadioButton rdoQuarterly;
         private System.Windows.Forms.RadioButton rdoMonthly;
